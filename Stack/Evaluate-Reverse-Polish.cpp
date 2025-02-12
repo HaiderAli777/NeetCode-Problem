@@ -8,35 +8,35 @@
 using namespace std;
 
 int evalRPN(vector<string> &tokens) {
-    stack<double> s;
-    double result = -1;
+    stack<int> s;
+    double result;
     for (int i = 0; i < tokens.size(); i++) {
   
       if (tokens[i] == "+") {
-        double secint = s.top();
+        int secint = s.top();
         s.pop();
-        double firstint = s.top();
+        int firstint = s.top();
         s.pop();
         result = firstint + secint;
         s.push(result);
       } else if (tokens[i] == "-") {
-        double secint = s.top();
+        int secint = s.top();
         s.pop();
-        double firstint = s.top();
+        int firstint = s.top();
         s.pop();
         result = firstint - secint;
         s.push(result);
       } else if (tokens[i] == "/") {
-        double secint = s.top();
+        int secint = s.top();
         s.pop();
-        double firstint = s.top();
+        int firstint = s.top();
         s.pop();
         result = firstint / secint;
         s.push(result);
       } else if (tokens[i] == "*") {
-        double secint = s.top();
+        int secint = s.top();
         s.pop();
-        double firstint = s.top();
+        int firstint = s.top();
         s.pop();
         result = firstint * secint;
         s.push(result);
