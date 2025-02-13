@@ -9,7 +9,11 @@ using namespace std;
 
 int evalRPN(vector<string> &tokens) {
     stack<int> s;
-    double result;
+    int result;
+    if(tokens.size()<=1)
+  {
+    return stoi(tokens[0]);
+  }
     for (int i = 0; i < tokens.size(); i++) {
   
       if (tokens[i] == "+") {
