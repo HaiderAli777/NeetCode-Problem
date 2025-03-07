@@ -9,15 +9,15 @@ public:
   int l = 0, r = nums.size() - 1;
   int minnumber = nums[l];
   while (l <= r) {
-    if(nums[l]<nums[r])
-    {
-      minnumber = min(minnumber, nums[l]);
-    }
+    
+    
     int mid = (l + r) / 2;
-    minnumber = min(minnumber, nums[mid]);
+
     if (nums[mid] >= nums[l]) {
+        minnumber=min(minnumber,nums[l]);
       l = mid + 1;
     } else {
+        minnumber=min(minnumber,nums[mid]);
       r = mid-1;
     }
   }
